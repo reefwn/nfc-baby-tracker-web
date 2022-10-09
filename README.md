@@ -1,34 +1,29 @@
-## Usage
+# NFC Baby Tracker Web
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+## Installation
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
-
-```bash
-$ npm install # or pnpm install or yarn install
+```
+pnpm install
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+## Running the app
 
-## Available Scripts
+```
+pnpm dev
+```
 
-In the project directory, you can run:
+## Building the app
 
-### `npm dev` or `npm start`
+```
+pnpm build
+```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies & IDE
 
-The page will reload if you make edits.<br>
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+<div>
+    <img style="float: left" src="https://www.solidjs.com/assets/logo.123b04bc.svg" height="48" alt="solid"> &nbsp;
+    <img style="float: left" src="https://vitejs.dev/logo-with-shadow.png" height="48" alt="vite"> &nbsp;
+    <img style="float: left" src="https://pnpm.io/img/pnpm-light.svg" height="48" alt="pnpm"> &nbsp;
+    <img style="float: left" src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Netlify_logo.svg" height="48" alt="netlify"> &nbsp;
+    <img style="float: left" src="https://code.visualstudio.com/assets/updates/1_35/logo-stable.png" height="48" alt="vscode">
+</div>
