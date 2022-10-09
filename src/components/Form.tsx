@@ -1,10 +1,6 @@
 import { createForm } from "@felte/solid";
 import { validator } from "@felte/validator-yup";
 import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
   Button,
   FormControl,
   FormErrorMessage,
@@ -22,6 +18,7 @@ import { For } from "solid-js";
 import type { InferType } from "yup";
 import { object, string } from "yup";
 import { ACTIVITY_TYPES } from "./../constant/activity.enum";
+import RequiredIdAlert from "./RequiredIdAlert";
 
 const schema = object({
   id: string().uuid().required(),
@@ -65,25 +62,7 @@ export function Form() {
     },
   });
 
-  if (!location.query.id)
-    return (
-      <Alert
-        status="danger"
-        variant="subtle"
-        flexDirection="column"
-        justifyContent="center"
-        textAlign="center"
-        height="200px"
-      >
-        <AlertIcon boxSize="40px" mr="0" />
-        <AlertTitle mt="$4" mb="$1" fontSize="$lg">
-          This page required ID!
-        </AlertTitle>
-        <AlertDescription maxWidth="$sm">
-          Thanks for interested in this project.
-        </AlertDescription>
-      </Alert>
-    );
+  if (!location.query.id) return <RequiredIdAlert />;
 
   return (
     <VStack
