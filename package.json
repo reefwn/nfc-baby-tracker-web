@@ -1,0 +1,30 @@
+{
+  "name": "vite-template-solid",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.8.2",
+    "vite": "^3.0.9",
+    "vite-plugin-solid": "^2.3.0"
+  },
+  "dependencies": {
+    "@felte/solid": "^1.2.5",
+    "@felte/validator-yup": "^1.0.10",
+    "@hope-ui/solid": "^0.6.7",
+    "@solidjs/router": "^0.5.0",
+    "@stitches/core": "^1.2.8",
+    "axios": "^1.1.2",
+    "dayjs": "^1.11.5",
+    "solid-icons": "^1.0.1",
+    "solid-js": "^1.5.1",
+    "solid-transition-group": "^0.0.11",
+    "yup": "^0.32.11"
+  }
+}
