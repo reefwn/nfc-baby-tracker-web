@@ -30,6 +30,13 @@ const schema = object({
   time: string().required(),
 });
 
+interface IForm {
+  id: string;
+  activity: string;
+  date: string;
+  time: string;
+}
+
 export function Form() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -38,7 +45,7 @@ export function Form() {
     InferType<typeof schema>
   >({
     extend: validator({ schema }),
-    onSubmit: async (values) => {
+    onSubmit: async (values: IForm) => {
       const time = dayjs(`${values.date} ${values.time}`).toDate();
       const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/activities`,
@@ -97,32 +104,22 @@ export function Form() {
         <FormLabel>Activity</FormLabel>
         <SimpleSelect
           placeholder="Choose an activity"
-          onChange={(value) => setFields("activity", value)}
+          onChange={(value: string) => setFields("activity", value)}
         >
           <For each={ACTIVITY_TYPES}>
-            {(item) => <SimpleOption value={item}>{item}</SimpleOption>}
+            {(item: string) => <SimpleOption value={item}>{item}</SimpleOption>}
           </For>
         </SimpleSelect>
         <FormErrorMessage>{errors("activity")}</FormErrorMessage>
       </FormControl>
       <FormControl required invalid={!!errors("date")}>
         <FormLabel>Date</FormLabel>
-        <Input
-          type="date"
-          name="date"
-          // value={new Date().toISOString().substring(0, 10)}
-          value={dayjs().format("YYYY-MM-DD")}
-        />
+        <Input type="date" name="date" value={dayjs().format("YYYY-MM-DD")} />
         <FormErrorMessage>{errors("date")}</FormErrorMessage>
       </FormControl>
       <FormControl required invalid={!!errors("time")}>
         <FormLabel>Time</FormLabel>
-        <Input
-          type="time"
-          name="time"
-          // value={new Date().toISOString().substring(11, 16)}
-          value={dayjs().format("HH:mm")}
-        />
+        <Input type="time" name="time" value={dayjs().format("HH:mm")} />
         <FormErrorMessage>{errors("time")}</FormErrorMessage>
       </FormControl>
       <HStack justifyContent="flex-end">
