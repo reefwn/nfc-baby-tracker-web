@@ -103,6 +103,7 @@ export function Form() {
       <FormControl required invalid={!!errors("activity")}>
         <FormLabel>Activity</FormLabel>
         <SimpleSelect
+          defaultValue={location.query.type}
           placeholder="Choose an activity"
           onChange={(value: string) => setFields("activity", value)}
         >
