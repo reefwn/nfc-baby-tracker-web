@@ -18,6 +18,11 @@ pnpm dev
 pnpm build
 ```
 
+## Preview
+
+![insert](https://github.com/reefwn/nfc-baby-tracker-web/blob/main/preview/insert.jpeg?raw=true)
+![view](https://github.com/reefwn/nfc-baby-tracker-web/blob/main/preview/view.jpeg?raw=true)
+
 ## Technologies & IDE
 
 <div>
